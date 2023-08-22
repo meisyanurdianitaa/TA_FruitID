@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP</title>
+    <link rel="stylesheet" href="./assets/css/app.css">
+</head>
+<body>
+    
+    <div class="app">
+        <div class="app-header">
+            <div class="ocrloader active" id="animasiScann">
+                <p>Scanning</p>
+                <em></em>
+                <span></span>
+            </div>
+            <img id="img" crossorigin="anonymous">
+        </div>
+        <div class="content">
+            <div class="content-prediction">
+                <p id="prediction"></p>
+            </div>
+            <div class="form">
+                <div class="custom-input-file">
+                    <label for="gambar">MULAI KLASIFIKASI</label>
+                    <input type="file" id="image_file" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/tfjs.js"></script>
+    <script src="./assets/js/mobilenet.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            // Saat memilih file gambar
+            $('#image_file').change(function() {
+                var fileName = $(this).val().split('\\').pop();
+                $('.selected-file').text('');
+            });
+        });
+
+        // window.onload = function() {
+
+        //     var imgElement = document.getElementById("img");
+        //     var animasiScann = document.getElementById("animasiScann");
+        //     // Cek apakah gambar memiliki lebar dan tinggi > 0
+        //     if (imgElement.naturalWidth > 0 && imgElement.naturalHeight > 0) {
+        //         animasiScann.classList.add('active');
+        //     } else {
+        //         animasiScann.classList.remove('active');
+        //     }
+        // };
+      </script>
+</body>
+</html>

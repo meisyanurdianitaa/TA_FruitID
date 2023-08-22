@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIDEO</title>
+  <link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./assets/css/vidioscreen.css">
+</head>
+<body class="app">
+  
+  <div class="appbar">
+      <button>
+
+      </button>
+      <span class="appbar-brand">VIDEO</span>
+  </div>
+  <div class="app-content">
+      <!-- <iframe class="app-content-iframe" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+  </div>
+  <script src="./assets/js/jquery.js"></script>
+  <script src="./assets/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="data.js"></script>
+  <script>
+    var tampilData = '';
+    for (const isi of dataBuah) {
+
+      var isiVidio = isi.vidio;
+
+      if(isiVidio != null){
+        tampilData += `
+          <iframe class="app-content-iframe" src="https://www.youtube.com/embed/${isiVidio}" frameborder="0" allowfullscreen></iframe>
+        `
+      }
+      
+    }
+
+    $('.app-content').html(tampilData)
+   
+  </script>
+</body>
+</html>
